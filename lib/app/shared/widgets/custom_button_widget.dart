@@ -5,10 +5,12 @@ class CustomButton extends StatelessWidget {
     Key? key,
     required this.buttonColor,
     required this.onPress,
+    required this.buttonText,
   }) : super(key: key);
 
   final Function()? onPress;
   final Color buttonColor;
+  final Text buttonText;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +24,7 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         onPressed: onPress,
-        child: Text('ENTRAR'),
+        child: buttonText,
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imc/app/pages/calc_imc_page/calc_imc_page.dart';
 import 'package:imc/app/shared/widgets/custom_button_widget.dart';
-import 'package:imc/app/shared/widgets/custom_container_widget.dart';
+import 'package:imc/app/pages/login_page/widgets/custom_container_widget.dart';
 
 class LoginPage extends StatelessWidget {
   static final String routeName = "/LoginPage";
@@ -47,6 +47,7 @@ class LoginPage extends StatelessWidget {
                     height: 20,
                   ),
                   CustomButton(
+                    buttonText: Text('ENTRAR'),
                     buttonColor: Theme.of(context).accentColor,
                     onPress: () {
                       Navigator.of(context).pushNamed(CalcImc.routeName);

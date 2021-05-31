@@ -47,6 +47,7 @@ flutter:
   assets:
     - assets/logo_home.png
     - assets/logo_ioasys.png
+    - assets/avatar.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
