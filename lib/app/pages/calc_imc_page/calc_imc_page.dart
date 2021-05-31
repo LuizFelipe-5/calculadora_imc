@@ -21,7 +21,7 @@ class _CalcImcState extends State<CalcImc> {
     _result = "";
   }
 
-  void _calculate() {
+  void _calculateImc() {
     setState(() {
       double weight = double.parse(_weightController.text);
       double height = double.parse(_heightController.text) / 100;
@@ -103,7 +103,7 @@ class _CalcImcState extends State<CalcImc> {
                 buttonText: Text('Calcular'),
                 buttonColor: Theme.of(context).primaryColor,
                 onPress: () {
-                  _calculate();
+                  _calculateImc();
                   setState(() {});
                 },
               ),

@@ -52,6 +52,7 @@ class _ToDoListState extends State<ToDoList> {
                   ),
                   TextButton(
                     style: TextButton.styleFrom(
+                      fixedSize: Size(74, 37),
                       backgroundColor: Theme.of(context).primaryColor,
                     ),
                     onPressed: () {
