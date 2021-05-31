@@ -112,7 +112,7 @@ class _CalcImcState extends State<CalcImc> {
                 keyboardType: TextInputType.number,
                 controller: _heightController,
                 decoration: InputDecoration(
-                  labelText: 'Altura (kg)',
+                  labelText: 'Altura (cm)',
                 ),
               ),
               const SizedBox(
