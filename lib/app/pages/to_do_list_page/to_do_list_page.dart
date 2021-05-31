@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:imc/app/pages/to_do_list_page/widgets/custom_listview_widget.dart';
 import 'package:imc/app/shared/widgets/custom_drawer_widget.dart';
 import 'package:imc/models/task_model.dart';
 
@@ -69,46 +70,7 @@ class _ToDoListState extends State<ToDoList> {
                   )
                 ],
               ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: tasks.length,
-                  itemBuilder: (context, index) {
-                    var task = tasks[index];
-                    return Dismissible(
-                      onDismissed: (value) {
-                        tasks.removeAt(index);
-                      },
-                      direction: DismissDirection.startToEnd,
-                      background: Container(
-                        color: Theme.of(context).disabledColor,
-                        padding: EdgeInsets.only(left: 16),
-                        alignment: Alignment.centerLeft,
-                        child: Icon(
-                          Icons.delete,
-                          color: Colors.white,
-                        ),
-                      ),
-                      key: UniqueKey(),
-                      child: Card(
-                        child: CheckboxListTile(
-                          title: Text(task.title),
-                          value: task.isCompleted,
-                          activeColor: Theme.of(context).primaryColor,
-                          secondary: Icon(
-                            task.isCompleted ? Icons.check_circle : Icons.error,
-                            color: Theme.of(context).primaryColor,
-                          ),
-                          onChanged: (value) {
-                            tasks[index].isCompleted = value!;
-
-                            setState(() {});
-                          },
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              )
+              CustomListView(tasks: tasks)
             ],
           ),
         ),
