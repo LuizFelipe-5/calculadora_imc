@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imc/app/shared/widgets/custom_button_widget.dart';
+import 'package:imc/app/shared/widgets/custom_drawer_widget.dart';
 
 class CalcImc extends StatefulWidget {
   static final String routeName = '/CalcImc';
@@ -26,17 +27,21 @@ class _CalcImcState extends State<CalcImc> {
       double height = double.parse(_heightController.text) / 100;
       double imc = weight / (height * height);
       if (imc < 18.6) {
-        _result = "Abaixo do Peso (${imc.toStringAsPrecision(4)})";
+        _result = "Você está baixo do Peso (${imc.toStringAsPrecision(4)})";
       } else if (imc >= 18.6 && imc < 24.9) {
-        _result = "Peso Ideal (${imc.toStringAsPrecision(4)})";
+        _result = "Você está no seu Peso Ideal (${imc.toStringAsPrecision(4)})";
       } else if (imc >= 24.9 && imc < 29.9) {
-        _result = "Levemente Acima do Peso (${imc.toStringAsPrecision(4)})";
+        _result =
+            "Você está Levemente acima do Peso (${imc.toStringAsPrecision(4)})";
       } else if (imc >= 29.9 && imc < 34.9) {
-        _result = "Obesidade Grau I (${imc.toStringAsPrecision(4)})";
+        _result =
+            "Você está com Obesidade Grau I (${imc.toStringAsPrecision(4)})";
       } else if (imc >= 34.9 && imc < 39.9) {
-        _result = "Obesidade Grau II (${imc.toStringAsPrecision(4)})";
+        _result =
+            "Você está com Obesidade Grau II (${imc.toStringAsPrecision(4)})";
       } else if (imc >= 40) {
-        _result = "Obesidade Grau III (${imc.toStringAsPrecision(4)})";
+        _result =
+            "Você está com Obesidade Grau III (${imc.toStringAsPrecision(4)})";
       }
     });
   }
@@ -67,31 +72,7 @@ class _CalcImcState extends State<CalcImc> {
           ),
         ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: Text('Item 1'),
-              onTap: () {
-                Navigator.of(context).pushNamed(CalcImc.routeName);
-              },
-            ),
-            ListTile(
-              title: Text('Item 2'),
-              onTap: () {
-                // Navigator.of(context).pushNamed(ToDoList.routeName);
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: CustomDrawer(),
       body: Padding(
         padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 36.0),
         child: Container(

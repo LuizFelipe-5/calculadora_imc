@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:imc/app/shared/widgets/custom_drawer_widget.dart';
 import 'package:imc/models/task_model.dart';
 
 class ToDoList extends StatefulWidget {
+  static final String routeName = '/ToDoList';
+
   @override
   _ToDoListState createState() => _ToDoListState();
 }
@@ -110,6 +113,7 @@ class _ToDoListState extends State<ToDoList> {
           ),
         ),
       ),
+      drawer: CustomDrawer(),
     );
   }
 }
