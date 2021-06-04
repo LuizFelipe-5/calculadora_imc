@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imc/app/pages/calc_imc_page/calc_imc_page.dart';
+import 'package:imc/app/pages/currency_converter_page/currency_converter_page.dart';
 import 'package:imc/app/pages/to_do_list_page/to_do_list_page.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -48,6 +49,16 @@ class CustomDrawer extends StatelessWidget {
             title: Text('Lista de Tarefas'),
             onTap: () {
               Navigator.of(context).pushNamed(ToDoList.routeName);
+            },
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.money,
+              color: Theme.of(context).primaryColor,
+            ),
+            title: Text('Conversor de Moedas'),
+            onTap: () {
+              Navigator.of(context).pushNamed(CurrencyConverter.routeName);
             },
           ),
         ],
